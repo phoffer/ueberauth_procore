@@ -27,6 +27,7 @@ defmodule UeberauthProcore.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:ueberauth, "~> 0.4"},
+     {:oauth2, "0.6.0"}]
   end
 end

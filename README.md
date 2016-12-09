@@ -1,6 +1,7 @@
 # UeberauthProcore
 
-**TODO: Add description**
+This is a Procore adapter for Überauth. The implementation is largely taken from
+https://github.com/ueberauth/ueberauth_github
 
 ## Installation
 
@@ -20,5 +21,23 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
     def application do
       [applications: [:ueberauth_procore]]
     end
+    ```
+
+  3. Add Procore to your Überauth configuration:
+
+    ```elixir
+    config :ueberauth, Ueberauth,
+      providers: [
+        procore: {Ueberauth.Strategy.Procore, []}
+      ]
+    ```
+
+  4. Update your provider configuration:
+
+    ```elixir
+    config :ueberauth, Ueberauth.Strategy.Procore.OAuth,
+      client_id: System.get_env("PROCORE_CLIENT_ID"),
+      client_secret: System.get_env("PROCORE_CLIENT_SECRET"),
+      redirect_uri: "https://someproxy.com" #optional
     ```
 

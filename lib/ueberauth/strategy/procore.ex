@@ -74,7 +74,7 @@ defmodule Ueberauth.Strategy.Procore do
   the user.
   """
   def uid(conn) do
-    conn.private.procore_user[:id]
+    conn.private.procore_user["id"]
   end
 
   @doc """

@@ -101,6 +101,9 @@ defmodule Ueberauth.Strategy.Procore do
 
     %Info{
       name: user["name"],
+      first_name: user["first_name"],
+      last_name: user["last_name"],
+      phone: user["business_phone"],
       email: user["email_address"]
     }
   end
